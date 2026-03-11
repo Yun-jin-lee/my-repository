@@ -11,7 +11,8 @@ The first MVP includes:
 - CLI argument parsing
 - input validation for keyword, infohash, and magnet
 - adapter routing
-- text-based output
+- text-based reporting
+- adapter skeletons
 - basic unit tests
 
 The MVP does not yet include:
@@ -51,33 +52,63 @@ Files:
 - `app/adapters/bittorrent_probe.py`
 
 ### Reporting
-Responsible for presenting or exporting results.
+Responsible for presenting results to the operator.
 
 Files:
 - `app/reporting/text_reporter.py`
 - `app/reporting/json_reporter.py`
 - `app/reporting/docx_reporter.py`
 
-## Planned query flow
+## Current execution flow
 
 ### Keyword search
-User input -> CLI parser -> search command -> Jackett adapter -> normalized output
+User input  
+-> CLI parser  
+-> search command  
+-> input validation  
+-> router  
+-> Jackett adapter  
+-> text reporter
 
 ### Infohash probe
-User input -> CLI parser -> probe command -> validator -> bittorrent probe adapter -> normalized output
+User input  
+-> CLI parser  
+-> probe command  
+-> input validation  
+-> router  
+-> BitTorrent probe adapter  
+-> text reporter
 
 ### Magnet probe
-User input -> CLI parser -> probe command -> validator -> bittorrent probe adapter -> extract btih -> normalized output
+User input  
+-> CLI parser  
+-> probe command  
+-> input validation  
+-> btih extraction  
+-> router  
+-> BitTorrent probe adapter  
+-> text reporter
 
 ## Design principles
 - keep the engine lightweight
 - keep network adapters modular
-- separate CLI logic from probing logic
+- separate validation, routing, and adapter execution
 - prefer metadata-only workflows where possible
 - keep reporting independent from data collection
+- make the codebase easy to test
 
-## Deployment direction
-- development in VS Code
-- repository hosted in GitLab
-- likely runtime target: Linux
-- optional operator usage from PowerShell
+## Current status
+Implemented:
+- parser
+- validators
+- command handlers
+- router
+- adapter skeletons
+- text reporting
+- unit tests for parser, validators, and router
+
+Planned next:
+- real Jackett integration
+- Tor/Lynx integration
+- metadata probe implementation
+- result normalization and deduplication
