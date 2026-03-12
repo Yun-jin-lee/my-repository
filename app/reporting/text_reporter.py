@@ -14,3 +14,26 @@ def print_adapter_result(result: dict) -> None:
 
     if result.get("btih"):
         print(f"[OK] Extracted btih: {result.get('btih')}")
+
+    if result.get("http_status") is not None:
+        print(f"[INFO] HTTP status: {result.get('http_status')}")
+
+    if result.get("request_url"):
+        print(f"[INFO] Request URL: {result.get('request_url')}")
+
+    if result.get("response_preview"):
+        print("[INFO] Response preview:")
+        print(result.get("response_preview"))
+
+    if result.get("lynx_binary"):
+        print(f"[INFO] Lynx binary: {result.get('lynx_binary')}")
+
+    if result.get("lynx_found") is not None:
+        print(f"[INFO] Lynx found on PATH: {result.get('lynx_found')}")
+
+    if result.get("is_onion") is not None:
+        print(f"[INFO] Onion target: {result.get('is_onion')}")
+
+    if result.get("prepared_command"):
+        print("[INFO] Prepared command:")
+        print(" ".join(result.get("prepared_command")))
