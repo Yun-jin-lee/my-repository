@@ -28,3 +28,12 @@ def test_search_keyword_arguments_are_parsed_correctly():
 
     assert args.command == "search"
     assert args.keyword == "cyber security pdf"
+    
+    
+def test_browse_target_arguments_are_parsed_correctly():
+    parser = build_parser()
+    args = parser.parse_args(["browse", "--target", "http://example.com", "--dry-run"])
+
+    assert args.command == "browse"
+    assert args.target == "http://example.com"
+    assert args.dry_run is True
