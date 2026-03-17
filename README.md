@@ -1,41 +1,36 @@
-# Lynx OSINT for Tor and Jackett
+# LynxIntel - Open Source INTEL Tool 
 
+**Project Overview:** LynxIntel is an open-source OSINT (Open Source Intelligence) tool designed to provide law enforcement and security researchers with a transparent, community-driven alternative to commercial scrapers and opaque intelligence platforms.
 
-**Client:** Law Enforcement Agency
+## Project Motivation
 
-**Context:** We want to decrease dependence on commercial scrapers or opaque open-source tools.
+Law enforcement and security organizations face increasing dependence on commercial data scraping solutions and closed-source tools. LynxIntel aims to democratize OSINT capabilities through an open-source approach.
 
-BitTorrent seems to have become the number one P2P protocol with an increase in API connectivity. We consider it an untapped source of OSINT, that could complement the traditional
-Wget and Google Search operators with filetype handles.
+BitTorrent has emerged as a primary P2P protocol with expanding API connectivity, representing an underutilized OSINT source. LynxIntel complements traditional reconnaissance methods (Wget, Google Search operators with filetype handles) by enabling advanced P2P network intelligence gathering.
 
-**Aim:**
-Develop a safe text based probing variant of Lynx24. But first, perform a light source code review
-to ensure nothing fishy is in place. Then, we need integration with Tor as well as Jackett with a
-CLI interface inheriting the Google Search operators and a couple of custom handles merging up
-to three typical operational OSINT scenarios. Social media is not in scope for this project.
+## Project Goals
 
-**Technical:**
-⎯ Keyword metadata search and AI enhanced DHT25 scanning to review duplicate findings.
-⎯ Must be equal or more performant than Wget26 and initiated as a PowerShell27 module.
-⎯ If it would simplify the project, keep Lynx for Tor searches and make a custom client for
-qBittorrent28 and another one for Tixati29, preferably running headless with HTTPS access.
-⎯ If relevant, add I2P30 to the scope of the project.
-Functional:
-⎯ Reverse image search across torrents file hashes without having to download actual files.
-⎯ Mass file metadata probing, AI analysis and reporting.
-⎯ Centralized keyword searching and highlighting in generated DOCX or PPTX reports.
-⎯ Let us know whether eMule31, DC++32, Usenet33 or IRC34 would be relevant to include.
+- Develop a secure, text-based probing tool for Tor network reconnaissance
+- Conduct rigorous source code review to ensure security and transparency
+- Integrate Tor, Jackett, and distributed network protocols with a CLI interface
+- Support Google Search operators and custom filters tailored to operational OSINT workflows
+- Cover three primary OSINT scenarios (social media excluded from initial scope)
 
-24 https://github.com/ThomasDickey/lynx-snapshots
-25 https://www.bittorrent.org/beps/bep_0005.html
-26 https://www.gnu.org/software/wget/
-27 https://github.com/PowerShell
-28 https://github.com/qbittorrent/qBittorrent
-29 https://forum.tixati.com/offtopic/112
-30 https://i2p.net/en/
-31 https://www.emule-project.com/home/perl/general.cgi?l=29
-32 https://hg.code.sf.net/p/dcplusplus/code
-33 https://web.archive.org/web/20170717031029/http://www.usenet4you.net/
-34 https://datatracker.ietf.org/doc/html/rfc1459
+## Technical Requirements
 
-test1
+- Keyword metadata search with AI-enhanced DHT scanning for deduplication
+- Performance parity with or exceeding Wget
+- PowerShell module implementation
+- Custom clients for qBittorrent and Tixati (headless, HTTPS-enabled)
+- Optional I2P network support
+
+## Feature Set
+
+- Reverse image search across torrent file hashes (without file downloads)
+- Batch file metadata analysis with AI-powered insights
+- Centralized keyword search with report generation (DOCX/PPTX)
+- Evaluation of eMule, DC++, Usenet, and IRC integration relevance
+
+## Contributing
+
+LynxIntel welcomes community contributions. See our GitHub repository for guidelines.
