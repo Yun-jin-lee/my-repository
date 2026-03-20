@@ -10,9 +10,8 @@ BitTorrent has emerged as a primary P2P protocol with expanding API connectivity
 
 ## Project Goals
 
-- Develop a secure, text-based probing tool for Tor network reconnaissance
-- Conduct rigorous source code review to ensure security and transparency
-- Integrate Tor, Jackett, and distributed network protocols with a CLI interface
+- Develop a text-based probing tool for Tor network reconnaissance
+- Integrate Tor, Jackett with a CLI interface
 - Support Google Search operators and custom filters tailored to operational OSINT workflows
 - Cover three primary OSINT scenarios (social media excluded from initial scope)
 
